@@ -5,7 +5,8 @@ export const signup = async (loginData: user) => {
     const { name, email, password, gender } = loginData;
 
     console.log(name, email, password, gender);
-    const response = await fetch("http://localhost:8080/api/signup", {
+    
+    const response = await fetch(`${process.env.REACT_APP_BACKEND_URI}/signup`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -1,7 +1,8 @@
 export const getUser = async () => {
   try {
     const token = localStorage.getItem("token");
-    const response = await fetch("http://localhost:8080/api/user/getUser", {
+
+    const response = await fetch(`${process.env.REACT_APP_BACKEND_URI}/user/getUser`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

@@ -2,7 +2,7 @@ export const getMonthlyLogin = async () => {
   try {
     const token = localStorage.getItem("token");
     const response = await fetch(
-      "http://localhost:8080/api/admin/getMonthlyLogin",
+      `${process.env.REACT_APP_BACKEND_URI}/admin/getMonthlyLogin`,
       {
         method: "GET",
         headers: {

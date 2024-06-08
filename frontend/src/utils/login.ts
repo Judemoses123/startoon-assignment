@@ -6,7 +6,8 @@ export const login = async (loginData: user) => {
     const email = loginData.email;
     const password = loginData.password;
     console.log(name, email, password);
-    const response = await fetch("http://localhost:8080/api/login", {
+    console.log(`${process.env.REACT_APP_BACKEND_URI}/login`);
+    const response = await fetch(`${process.env.REACT_APP_BACKEND_URI}/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
